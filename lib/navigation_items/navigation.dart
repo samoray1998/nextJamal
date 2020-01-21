@@ -1,7 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:second_app/pages/homepage.dart';
 import 'package:second_app/pages/account.dart';
-enum NavigationEvents{HomePageClickEvent,AccountPageClickEvent}
+import 'package:second_app/pages/personnalInfo.dart';
+enum NavigationEvents{HomePageClickEvent,AccountPageClickEvent,PersonalInfosClickEvent}
 abstract class NavigationStates {}
 class Navigationitems extends Bloc<NavigationEvents,NavigationStates>{
   @override
@@ -16,6 +17,9 @@ class Navigationitems extends Bloc<NavigationEvents,NavigationStates>{
        
        break;
        case NavigationEvents.AccountPageClickEvent:yield accountpage();
+       
+       break;
+       case NavigationEvents.PersonalInfosClickEvent:yield PersonalInfos();
        
        break;
      default:

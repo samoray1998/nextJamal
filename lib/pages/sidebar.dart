@@ -125,7 +125,12 @@ class sidebar extends StatefulWidget{
                       BlocProvider.of<Navigationitems>(context).add(NavigationEvents.AccountPageClickEvent); 
                     },
                     ),
-                    MenuItem(icon: Icons.collections_bookmark,title: "CV Templets",),
+                    MenuItem(icon: Icons.collections_bookmark,title: "CV Templets",
+                    onTap: (){
+                     onIconPressed();
+                      BlocProvider.of<Navigationitems>(context).add(NavigationEvents.PersonalInfosClickEvent); 
+                    },
+                    ),
                     MenuItem(icon: Icons.save,title: "Saved Templets",),
                     MenuItem(icon: Icons.settings,title: "Settings",),
                     MenuItem(icon: Icons.help,title: "Help",),

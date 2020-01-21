@@ -82,48 +82,50 @@ class accountpage extends StatefulWidget with NavigationStates {
                ),
              ),
              Padding(
-                padding: const EdgeInsets.only(left: 30.0,right: 30.0),
+                padding: const EdgeInsets.only(left: 20.0,right: 20.0),
           child: Container(
             height: 4.0,
             decoration: BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
-                    colors: [const Color(0xFFa572c0), const Color(0xFF6559d4)])),
+                    colors: [const Color(0xFFB9F6CA),const Color(0xFF2962FF), ])),
                    
              )
              ),
              Container(
-                child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        children: <Widget>[
-                           Padding(padding: const EdgeInsets.only(left: 18.0,right: 32.0),
-                          
-                           child: Row(
-                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               padding: EdgeInsets.only(top: 20),
+               margin: EdgeInsets.only(left: 20),
+               child: Text("Recent Activities :",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+             ),
+             Container(
+                margin: EdgeInsets.symmetric(vertical: 20.0),
+                padding: EdgeInsets.only(left: 20.0),
+                height: 200.0,
+               child: ListView(
+                             scrollDirection: Axis.horizontal,
+                            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                        
-                           mycard("50"),
-                             Column(children: <Widget>[
-                              
-                              Text(" Templet1",style: TextStyle(color: Colors.grey)),
-
-                            ],),
-                             Column(children: <Widget>[
-                             
-                              Text("Templet2",style: TextStyle(color: Colors.grey)),
-
-                            ],)
+                            mycard("50"),
+             mytemplets("templets1"),
+             mytemplets("templets2"),
+               mytemplets("templets3"),
+              mytemplets("templets4"),
+                          
                           ],
                            ),
-                           )
-                                
-                      ],
-                      ),
-                    ),
-             )
-             
+             ),
+             SizedBox(height: 10.0,)
+             ,
+             educationCard(),
+              SizedBox(height: 10.0,),
+              Container(
+                  margin: EdgeInsets.only(top: 10,left: 10.0),
+                  child: Card(
+                    
+                  ),
+
+              )
 
       ],)
     );
@@ -135,17 +137,17 @@ class accountpage extends StatefulWidget with NavigationStates {
       return something;
     }
     Widget mycard( String nblike){
-      return Center(
+      return Container(
         
         child:
          Card(
-          elevation: 8.0,
+          elevation: 5.0,
           
-            child:Column(
+            child:Wrap(
               children: <Widget>[
              Container(
-              width: 120.0,
-              height: 80.0,
+              width: 160.0,
+              height: 200.0,
               decoration: BoxDecoration(
                gradient: LinearGradient(
                     begin: Alignment.topLeft,
@@ -155,20 +157,131 @@ class accountpage extends StatefulWidget with NavigationStates {
               ),
               child: Column(
               
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize:MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                SizedBox(height: 8.0,),
-                Text(nblike,style: TextStyle(fontSize: 24.0),),
-                              Icon(Icons.thumb_up,color: Colors.white,),
+                SizedBox(height: 20.0,),
+                Container(
+                  margin: EdgeInsets.only(right: 100),
+                  child:Icon(Icons.thumb_up,color: Colors.white,) ,),
+                
                               
-                              SizedBox(height: 8.0,),
+                SizedBox(height: 74.0,),
+                Container(
+                  margin: EdgeInsets.only(right: 100),
+                  child: Text(nblike,style: TextStyle(fontSize: 24.0),) ,)
+                             ,
+                              SizedBox(height: 12.0,),
+                              Container(
+                                margin: EdgeInsets.only(right: 10),
+                                child: Text("Liked Templets") ,)
+           
               ],
             ),
             ),
-            Text("Liked Templets")
 
               ],
             )
       ),);
+    }
+    Widget mytemplets( String namet){
+      return Container(
+          width: 160.0,
+          height: 200,
+        child:Card(
+           elevation: 5.0,
+         
+         
+          child: Wrap(
+            children: <Widget>[
+              Image.asset("assets/TempletsEx.jpg",width: 160.0,height: 150,),
+              Center(child: 
+              Text(namet),),
+              
+
+            ],
+          ),
+        )
+        ,
+
+
+      );
+
+    }
+    Widget educationCard(){
+      return Container(
+               
+               margin: EdgeInsets.only(left: 10.0),
+               height: 210,
+               child: Card(
+                 elevation: 5.0,
+                 child: Column(
+                   children: <Widget>[
+                     Row(
+                       children: <Widget>[
+                         
+                         Container(
+                          margin: EdgeInsets.only(left: 10,top: 10),
+                        child:Text(
+                           "Education",
+                           style: TextStyle(
+                             fontFamily: "OpenSens"
+                             ,fontSize: 16
+                             ,fontWeight: FontWeight.w500
+                             )
+                             ), 
+
+                         ),
+                         Spacer(),
+                         IconButton(
+                           icon: Icon(Icons.edit),
+                           onPressed: ()=>print("Edit Education"),
+                         )
+                         
+                       ],
+                     ),
+                     Row(
+                       children: <Widget>[
+
+                     Container(
+                         margin: EdgeInsets.only(left: 10,top: 5),
+                         child: Image.asset("assets/Education.png",width: 50.0,height: 50.0,),
+                     ),
+                     Container(
+                       padding: EdgeInsets.only(left: 5),
+                       child:Column(children: <Widget>[
+                         Container(
+                           child: Text("Certificate Name",style:TextStyle(fontWeight: FontWeight.w500)),
+                         ),
+                       
+             SizedBox(
+  width: 200,
+  child: Text(
+    "hjhj jhjh hjgj nhgh klklj jkhk jgjg ghf hh ",
+    style: TextStyle(
+      color: Colors.black,
+     
+    ),
+  ),
+),  
+            
+                          
+                        
+                       ],)
+                     )
+                       ],
+                     ),
+                      Container(
+                        margin: EdgeInsets.only(top: 40),
+               child: FlatButton(
+                 child: Text("See All",style: TextStyle(color: Colors.blue),),
+                 onPressed: ()=>print("see all Formations"),
+               ),
+             ) 
+                   ],
+                 ),
+
+               ),
+             );
     }
 }
