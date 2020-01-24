@@ -17,10 +17,11 @@ class PersonalInfos extends StatefulWidget with NavigationStates{
 class myPersonnalInfo extends State<PersonalInfos>{
   static List<CountryModel> _dropdownItems = new List();
   String _date="set date";
+  bool _ishovered=false;
    CountryModel _dropdownValue;
   String _errorText;
   TextEditingController phoneController = new TextEditingController();
-
+ 
   Widget _buildCountry() {
 return FormField(
   builder: (FormFieldState state) {
@@ -74,6 +75,22 @@ return FormField(
       phoneController.text = _dropdownValue.countryCode;
     });
   }
+  Widget mytextfield (String hint,IconData icon ){
+    return  TextField(
+      
+              decoration: new InputDecoration(
+                prefixIcon: Icon(icon,color:Colors.grey,),
+                focusedBorder: OutlineInputBorder(
+                  
+                  borderSide: BorderSide(color: Colors.greenAccent, width: 1.0,),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
+                  
+                ),
+                hintText: hint,
+              ),);
+  }
 
 
   @override
@@ -81,149 +98,117 @@ return FormField(
     // TODO: implement build
     return  Container(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text('Personal Infos'), 
-          centerTitle: true,// _edit
-          automaticallyImplyLeading: false,
-        ),
+        // appBar: AppBar(
+        //   title: Text('Personal Infos'), 
+        //   centerTitle: true,// _edit
+        //   automaticallyImplyLeading: false,
+        // ),
         body: Container(
               margin: EdgeInsets.only(left: 20,right: 20),
-          child: Container(
+          child: Form(
             child: ListView(
-              padding: EdgeInsets.symmetric(vertical: 10),
+              padding: EdgeInsets.symmetric(vertical: 80),
               
               children: <Widget>[
-                SizedBox(height: 15,),
-                Row(
-                  children: <Widget>[
-                    // Text('F.name : '),
-                    Expanded(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'first name',
-                          prefixIcon: Icon(Icons.person)
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                  SizedBox(height: 15,),
-                Row(
-                  children: <Widget>[
-                    // Text('F.name : '),
-                    Expanded(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'Last name',
-                          prefixIcon: Icon(Icons.person)
-                        ),
-                      ),
+               
+               Container(
+                 margin: EdgeInsets.only(left: 35),
+                 child: Text("Let Recruiters Know More About You :",style: TextStyle(fontFamily: "Open Sens",fontSize: 18,fontWeight: FontWeight.w500),),
+
+               ),
+                SizedBox(height: 20,),
+  
+                    Container(
+                      margin: EdgeInsets.only(left: 18,right: 20),
+                      
+                      child:  TextFormField(
+                keyboardType:TextInputType.text,
+                // controller:new TextEditingController(text:),
+                decoration: const InputDecoration(
+                 suffixIcon:const Icon(Icons.person),
+                  hintText: '...',
+                  hintStyle :const TextStyle(color:const Color(0XFFFF80AB),fontSize:14.0),
+                  labelText: 'First Name',
+                )
                     ),
-                  ],
-                ),
-                  SizedBox(height: 15,),
-                Row(
-                  children: <Widget>[
-                    // Text('F.name : '),
-                    Expanded(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'Email Address',
-                          prefixIcon: Icon(Icons.mail)
-                        ),
-                      ),
                     ),
-                  ],
-                ),
-                  SizedBox(height: 15,),
-                Row(
-                  children: <Widget>[
-                    // Text('F.name : '),
-                    Expanded(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'Phone number',
-                          
-                          prefixIcon: Icon(Icons.phone)
-                        ),
-                        
-                      ),
-                    ),
-                  ],
-                ),
                   SizedBox(height: 10,),
-
-                Row(
-                  children: <Widget>[
-                    // Text('F.name : '),
-                    Expanded(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'Birth City',
-                          
-                          prefixIcon: Icon(Icons.location_city)
-                        ),
-                        
-                      ),
+                     Container(
+                      margin: EdgeInsets.only(left: 18,right: 20),
+                      
+                      child:  TextFormField(
+                keyboardType:TextInputType.text,
+                // controller:new TextEditingController(text:),
+                decoration: const InputDecoration(
+                 suffixIcon:const Icon(Icons.account_circle),
+                  hintText: '...',
+                  hintStyle :const TextStyle(color:const Color(0XFFFF80AB),fontSize:14.0),
+                  labelText: 'Last Name',
+                )
                     ),
-                  ],
-                ),
-
+                    ),
+              
                  SizedBox(height: 15,),
 
-                Row(
-                  children: <Widget>[
-                    // Text('F.name : '),
-                    Expanded(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'Home Address',
-                          
-                          prefixIcon: Icon(Icons.home)
-                        ),
-                        
-                      ),
+                Container(
+                      margin: EdgeInsets.only(left: 18,right: 20),
+                      
+                      child:  TextFormField(
+                keyboardType:TextInputType.text,
+                // controller:new TextEditingController(text:),
+                decoration: const InputDecoration(
+                 suffixIcon:const Icon(Icons.phone),
+                  hintText: '...',
+                  hintStyle :const TextStyle(color:const Color(0XFFFF80AB),fontSize:14.0),
+                  labelText: 'Phone',
+                )
                     ),
-                  ],
+                    ),
+                 SizedBox(height: 10,),
+                  Container(
+                      margin: EdgeInsets.only(left: 18,right: 20),
+                      
+                      child:  TextFormField(
+                keyboardType:TextInputType.text,
+                // controller:new TextEditingController(text:),
+                decoration: const InputDecoration(
+                 suffixIcon:const Icon(Icons.email),
+                  hintText: '...',
+                  hintStyle :const TextStyle(color:const Color(0XFFFF80AB),fontSize:14.0),
+                  labelText: 'Email',
+                )
+                    ),
+                    ),
+
+                   SizedBox(height: 30,),
+
+                Container(
+                    margin: EdgeInsets.only(left: 18),
+                     child: Text("Add More info:",style: TextStyle(fontFamily: "Open Sens",fontSize: 18,fontWeight: FontWeight.w500),),
+
                 ),
 
-                   SizedBox(height: 10,),
-
-                Row(
-                  children: <Widget>[
-                    // Text('F.name : '),
-                    Expanded(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'National identity Card Nomber',
-                          
-                          prefixIcon: Icon(Icons.assignment_ind)
-                        ),
-                        
-                      ),
+                   SizedBox(height: 20,),
+                   Container(
+                      margin: EdgeInsets.only(left: 18,right: 20),
+                      
+                      child:  TextFormField(
+                keyboardType:TextInputType.text,
+                // controller:new TextEditingController(text:),
+                decoration: const InputDecoration(
+                 suffixIcon:const Icon(Icons.location_city),
+                  hintText: '...',
+                  hintStyle :const TextStyle(color:const Color(0XFFFF80AB),fontSize:14.0),
+                  labelText: 'The City Of Your Birth',
+                )
                     ),
-                  ],
-                ),
+                    ),
 
-                   SizedBox(height: 10,),
+                
 
-                // Row(
-                //   children: <Widget>[
-                //     // Text('F.name : '),
-                //     // Expanded(
-                //     //   child: TextFormField(
-                //     //     decoration: InputDecoration(
-                //     //       hintText: 'Country ',
-                          
-                //     //       prefixIcon: Icon(Icons.place)
-                //     //     ),//saadDropDown ,
-                //     //   ),
-                //     // ),
-                    
-                //   ],
-                // ),
                 _buildCountry(),
                    SizedBox(height: 10,),
+
 
                 Container(
                   child:  RaisedButton(
@@ -287,28 +272,21 @@ return FormField(
 
 
                  SizedBox(height: 40,),
-               Container(
-                //  padding: EdgeInsets.only(left: 100),
-                 child:FloatingActionButton.extended(onPressed: ()=>print("save changes"),
-                   backgroundColor: Colors.blueAccent,
-                    icon: Icon(Icons.save) ,
-                    label:Text("Save Changes")
-                 
-               ),
-                
-        
-        )
+               
 
                 
               ],
             ),
           ),
         ),
-        // floatingActionButton: FloatingActionButton(onPressed: ()=>print("save changes"),
-        // backgroundColor: Colors.blueAccent,
-        // child: Icon(Icons.save),
-        
-        // ),
+         
+                //  padding: EdgeInsets.only(left: 100),
+      floatingActionButton:FloatingActionButton.extended(onPressed: ()=>print("save changes"),
+                   backgroundColor: Colors.blueAccent,
+                    icon: Icon(Icons.save) ,
+                    label:Text("Save Changes")
+                 
+               ),
       )
     );
   }
@@ -323,3 +301,206 @@ class CountryModel {
     this.countryCode,
   });
 }
+
+
+
+
+
+
+
+
+
+
+// import 'package:flutter/material.dart';
+// import 'package:second_app/navigation_items/navigation.dart';
+
+// class PersonalInfos extends StatelessWidget with NavigationStates {
+
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       child: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Personal Infos'), // _edit
+//         ),
+//         body: Container(
+//           child: Form(
+
+//             child: ListView(
+//               padding: EdgeInsets.symmetric(vertical: 10),
+//               children: <Widget>[
+//                 Row(
+//                   children: <Widget>[
+//                     // Text('F.name : '),
+//                     Expanded(
+//                       child: TextFormField(
+//                         decoration: InputDecoration(
+//                           hintText: 'First name',
+//                           prefixIcon: Icon(Icons.person),
+//                         ),
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+
+//                 Row(
+//                   children: <Widget>[
+//                     // Text('F.name : '),
+//                     Expanded(
+//                       child: TextFormField(
+//                         decoration: InputDecoration(
+//                           hintText: 'Last name',
+//                           prefixIcon: Icon(Icons.person)
+//                         ),
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+
+//                 Row(
+//                   children: <Widget>[
+//                     // Text('F.name : '),
+//                     Expanded(
+//                       child: TextFormField(
+//                         decoration: InputDecoration(
+//                           hintText: 'Email Address',
+//                           prefixIcon: Icon(Icons.mail)
+//                         ),
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+
+//                 Row(
+//                   children: <Widget>[
+//                     // Text('F.name : '),
+//                     Expanded(
+//                       child: TextFormField(
+//                         decoration: InputDecoration(
+//                           hintText: 'Phone number',
+                          
+//                           prefixIcon: Icon(Icons.phone)
+//                         ),
+                        
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+
+
+//                 Row(
+//                   children: <Widget>[
+//                     // Text('F.name : '),
+//                     Expanded(
+//                       child: TextFormField(
+//                         decoration: InputDecoration(
+//                           hintText: 'Birth City',
+                          
+//                           prefixIcon: Icon(Icons.location_city)
+//                         ),
+                        
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+
+
+
+//                 Row(
+//                   children: <Widget>[
+//                     // Text('F.name : '),
+//                     Expanded(
+//                       child: TextFormField(
+//                         decoration: InputDecoration(
+//                           hintText: 'Home Address',
+                          
+//                           prefixIcon: Icon(Icons.home)
+//                         ),
+                        
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+
+
+
+//                 Row(
+//                   children: <Widget>[
+//                     // Text('F.name : '),
+//                     Expanded(
+//                       child: TextFormField(
+//                         decoration: InputDecoration(
+//                           hintText: 'Card Id National Number',
+                          
+//                           prefixIcon: Icon(Icons.perm_identity)
+//                         ),
+                        
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+
+
+
+//                 Row(
+//                   children: <Widget>[
+//                     // Text('F.name : '),
+//                     Expanded(
+//                       child: TextFormField(
+//                         decoration: InputDecoration(
+//                           hintText: 'Country picker',
+                          
+//                           prefixIcon: Icon(Icons.place)
+//                         ),//saadDropDown ,
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+
+
+//                 Row(
+//                   children: <Widget>[
+//                     // Text('F.name : '),
+//                     Expanded(
+//                       child: TextFormField(
+//                         decoration: InputDecoration(
+//                           hintText: 'Birth Date',
+                          
+//                           prefixIcon: Icon(Icons.date_range)
+//                         ),
+                        
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+
+
+
+//                 Row(
+//                   children: <Widget>[
+//                     // Text('F.name : '),
+//                     Expanded(
+//                       child: TextFormField(
+//                         decoration: InputDecoration(
+//                           hintText: 'Password',
+                          
+//                           prefixIcon: Icon(Icons.lock)
+//                         ),
+//                         obscureText: true,
+
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+
+
+                
+//               ],
+//             ),
+//           ),
+//         ),
+//       )
+//     );
+//   }
+// }

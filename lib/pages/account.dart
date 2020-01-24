@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class accountpage extends StatefulWidget with NavigationStates {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
+   
     return new myAccount (
     
         );
@@ -19,24 +19,7 @@ class accountpage extends StatefulWidget with NavigationStates {
 
   @override
   Widget build(BuildContext context) {
-    var futureBuilder=new FutureBuilder(
-      future: _getData(),
-      builder: (BuildContext context, AsyncSnapshot snapshot){
-            switch (snapshot.connectionState) {
-              case ConnectionState.none: return new Text("press button to start");
-                break;
-                 case ConnectionState.waiting: return new Text("Awiating the result");
-                break;
-                
-              default:
-              if (snapshot.hasError) {
-                return new Text("Error :${snapshot.error}");
-              } else {
-                return new Text("${snapshot.data}");
-              }
-            }
-      },
-    );
+    
     // TODO: implement build
     return Center(
       child: ListView(

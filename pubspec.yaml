@@ -29,6 +29,8 @@ dependencies:
   curved_navigation_bar: ^0.3.1
   http: ^0.12.0+4
   flutter_datetime_picker: ^1.3.4
+  smooth_star_rating: 1.0.4+2
+  rflutter_alert: ^1.0.3
 
 dev_dependencies:
   flutter_test:
@@ -59,9 +61,10 @@ flutter:
     - assets/Competences.png
     - assets/Formation.png
     - assets/personInfo.png
-    - assets/Skills.png
+    
     - assets/TempletsEx.jpg
     - assets/Education.png
+    - assets/skills.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

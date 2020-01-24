@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:second_app/navigation_items/navigation.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:second_app/pages/personnalInfo.dart';
 // import 'package:nextMain/screens/pages/menus/cv_browser.dart';
 // import 'package:nextMain/services/auth.dart';
 // import 'package:nextMain/services/database.dart';
@@ -92,9 +93,9 @@ padding: EdgeInsets.only(top:120.0),
     ),
     InkWell( 
       onTap: (){print('HI');},
-      child: myitems(Icons.assignment_ind,"Personal Info",0xffed622b,()=>{print('jamaloo')}),
+      child: myitems(Icons.assignment_ind,"Personal Info",0xffed622b,()=>{}),
     ),
-     myitems(Icons.show_chart,"Skills",0xff26cb3c,null),
+     myitems(Icons.show_chart,"Skills",0xff26cb3c,()=>{Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalInfos()))}),
       myitems(Icons.next_week,"Competences",0xff3399fe,null),
        myitems(Icons.school,"Formation",0xff622f74,null),
         myitems(Icons.assignment,"Experince",0xfffffa00,null),

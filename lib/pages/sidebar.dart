@@ -131,9 +131,28 @@ class sidebar extends StatefulWidget{
                       BlocProvider.of<Navigationitems>(context).add(NavigationEvents.PersonalInfosClickEvent); 
                     },
                     ),
-                    MenuItem(icon: Icons.save,title: "Saved Templets",),
-                    MenuItem(icon: Icons.settings,title: "Settings",),
-                    MenuItem(icon: Icons.help,title: "Help",),
+                    MenuItem(icon: Icons.save,title: "Saved Templets",
+                      onTap: (){
+                     onIconPressed();
+                      BlocProvider.of<Navigationitems>(context).add(NavigationEvents.FormationClickEvent); 
+                    },
+                    
+                    ),
+                    MenuItem(icon: Icons.settings,title: "Settings",
+                     onTap: (){
+                     onIconPressed();
+                      BlocProvider.of<Navigationitems>(context).add(NavigationEvents.AddFormationClickEvent); 
+                    },
+                    
+                    
+                    ),
+                    MenuItem(icon: Icons.help,title: "Help",
+                     onTap: (){
+                     onIconPressed();
+                      BlocProvider.of<Navigationitems>(context).add(NavigationEvents.AddSkillsClickEvent); 
+                    },
+                    
+                    ),
                     MenuItem(icon: Icons.insert_drive_file,title: "Legale & Policies",),
                     MenuItem(icon: Icons.exit_to_app,title: "Logout",)
 
