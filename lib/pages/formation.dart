@@ -191,9 +191,39 @@ _onAlertWithCustomContentPressed(context) {
     return Scaffold(
      appBar: AppBar(
        title: Text("Formation"),
+       
        centerTitle: true,
         automaticallyImplyLeading: false,
      ), 
+     body: Container(
+       child: Container(
+                margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+
+         child: ListView(
+           children: <Widget>[
+               Container(
+                 margin: EdgeInsets.only(left: 12,right: 12),
+                 padding: EdgeInsets.all(10),
+                 child: Card(
+                  child: Row(children: <Widget>[
+                    Container(child: Image.asset("assets/Formation.png",width: 100,height: 100,),),
+                    Column(children: <Widget>[
+                      Container(
+                        child: Text("Formaion Name",),
+                      
+                      ),
+                      Container(
+                        child: Text("Cirtificate Link"),
+                      )
+                     
+                    ],)
+                  ],),
+               ),)
+           ],
+         )
+         
+         ,),
+       ),
      floatingActionButton: FloatingActionButton(
        child: Icon(Icons.add),
        onPressed:() => _onAlertWithCustomContentPressed(context) ,

@@ -69,7 +69,27 @@ class homepage extends StatefulWidget with NavigationStates{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-return new Container(
+return new Scaffold(
+  appBar: AppBar(
+    actions: <Widget>[
+      PopupMenuButton(
+        icon: Icon(Icons.more_vert),
+        itemBuilder: (BuildContext context){
+          return  mypopupitems.map((mypopupitem mpp){
+                return new PopupMenuItem(child: ListTile(
+                  title:new Text(mpp.titel),
+                  leading: mpp.icon,
+                ),
+
+                );
+          }).toList(); 
+        },
+
+      )
+    ],),
+
+
+  body:Container(
 decoration: BoxDecoration(
 
 ),
@@ -78,7 +98,8 @@ padding: EdgeInsets.only(top:120.0),
 
 
 
- child:StaggeredGridView.count(
+ child:
+StaggeredGridView.count(
   crossAxisCount: 2,
   crossAxisSpacing: 12.0,
   mainAxisSpacing: 12.0,
@@ -115,7 +136,13 @@ padding: EdgeInsets.only(top:120.0),
 
 
   ],
-));
+)
+
+ 
+ 
+ ) ,
+);
+ 
 
 
 
@@ -123,3 +150,17 @@ padding: EdgeInsets.only(top:120.0),
 
   }
 }
+class mypopupitem{
+ final String titel;
+ final Icon icon;
+
+ const mypopupitem(this.titel, this.icon);
+ 
+  
+}
+const String c="Langauge";
+const String c2="Logout";
+const List<mypopupitem> mypopupitems=[
+ const mypopupitem(c,const Icon(Icons.translate)),
+   mypopupitem(c2,const Icon(Icons.exit_to_app))
+ ];

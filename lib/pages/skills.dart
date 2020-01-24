@@ -97,7 +97,7 @@ _onAlertWithCustomContentPressed(context) {
           allowHalfRating: false,
           onRatingChanged: (v) {
             rating = v;
-            // setState(() {});
+            setState(() {});
           },
           starCount: 5,
           rating: rating,
