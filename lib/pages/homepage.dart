@@ -71,6 +71,8 @@ class homepage extends StatefulWidget with NavigationStates{
     // TODO: implement build
 return new Scaffold(
   appBar: AppBar(
+    elevation: 0,
+    automaticallyImplyLeading: false,
     actions: <Widget>[
       PopupMenuButton(
         icon: Icon(Icons.more_vert),
@@ -86,7 +88,8 @@ return new Scaffold(
         },
 
       )
-    ],),
+    ],
+    ),
 
 
   body:Container(

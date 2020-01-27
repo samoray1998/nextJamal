@@ -1,7 +1,10 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:second_app/navigation_items/navigation.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class formation extends StatefulWidget with NavigationStates{
   @override
@@ -196,38 +199,160 @@ _onAlertWithCustomContentPressed(context) {
         automaticallyImplyLeading: false,
      ), 
      body: Container(
-       child: Container(
-                margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+       padding: EdgeInsets.only(top: 30),
+       child:ListView(
+         children: <Widget>[
+          Container(
+            child:Slidable(
+              delegate: new SlidableDrawerDelegate(),
+              child: Container(
+                color: Colors.white,
+                child: ListTile(
+                   leading: Image.asset("assets/Formation.png",width: 50,height: 50,),
+                   title: Container(
+                     alignment: Alignment.topLeft,
+                     child: Column(
+                       mainAxisAlignment: MainAxisAlignment.start,
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: <Widget>[
+                         Text("- Foramtion Name",textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.w600),),
+                         InkWell(
+                           child: Text("www.certificatelink.com",style: TextStyle(color: Colors.blue)),
+                           onTap: ()=>{},
+                         ),
+                         Text("Duration:2017/9/10,2018/6/31"),
+                       ],
+                     ),
+                   ),
+                ),
+              ),
+              secondaryActions: <Widget>[
+    new IconSlideAction(
+      caption: 'Edit',
+      color: Colors.black45,
+      icon: Icons.edit,
+      onTap: () =>print("more"),
+    ),
+    new IconSlideAction(
+      caption: 'Delete',
+      color: Colors.red,
+      icon: Icons.delete,
+      onTap: () =>print("Delete"),
+    ),
+  ],
+            )
+          ),
+          Container(
+            child:Slidable(
+              delegate: new SlidableDrawerDelegate(),
+              child: Container(
+                color: Colors.white,
+                child: ListTile(
+                   leading: Image.asset("assets/Formation.png",width: 50,height: 50,),
+                   title: Container(
+                     alignment: Alignment.topLeft,
+                     child: Column(
+                       mainAxisAlignment: MainAxisAlignment.start,
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: <Widget>[
+                         Text("- Foramtion Name",textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.w600),),
+                         InkWell(
+                           child: Text("www.certificatelink.com",style: TextStyle(color: Colors.blue)),
+                           onTap: ()=>{},
+                         ),
+                         Text("Duration:2017/9/10,2018/6/31"),
+                       ],
+                     ),
+                   ),
+                ),
+              ),
+              secondaryActions: <Widget>[
+    new IconSlideAction(
+      caption: 'Edit',
+      color: Colors.black45,
+      icon: Icons.edit,
+      onTap: () =>print("more"),
+    ),
+    new IconSlideAction(
+      caption: 'Delete',
+      color: Colors.red,
+      icon: Icons.delete,
+      onTap: () =>print("Delete"),
+    ),
+  ],
+            )
+          ),
+          Container(
+            child:Slidable(
+              delegate: new SlidableDrawerDelegate(),
+              child: Container(
+                color: Colors.white,
+                child: ListTile(
+                   leading: Image.asset("assets/Formation.png",width: 50,height: 50,),
+                   title: Container(
+                     alignment: Alignment.topLeft,
+                     child: Column(
+                       mainAxisAlignment: MainAxisAlignment.start,
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: <Widget>[
+                         Text("- Foramtion Name",textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.w600),),
+                         InkWell(
+                           child: Text("www.certificatelink.com",style: TextStyle(color: Colors.blue)),
+                           onTap: ()=>{},
+                         ),
+                         Text("Duration:2017/9/10,2018/6/31"),
+                       ],
+                     ),
+                   ),
+                ),
+              ),
+              secondaryActions: <Widget>[
+    new IconSlideAction(
+      caption: 'Edit',
+      color: Colors.black45,
+      icon: Icons.edit,
+      onTap: () =>print("more"),
+    ),
+    new IconSlideAction(
+      caption: 'Delete',
+      color: Colors.red,
+      icon: Icons.delete,
+      onTap: () =>print("Delete"),
+    ),
+  ],
+            )
+          )
+         ],
+       ),
+      //  child: Column(
+      //    children: <Widget>[
+      //     //  Slidable(
+      //     //    delegate: new SlidableDrawerDelegate(),
+      //     //    child:Container(
+      //     //      color: Colors.white,
+      //     //      child: ListTile(
+      //     //        leading: Image.asset("assets/Formation.png",width: 50,height: 50,),
+      //     //        title: Container(
+      //     //          child: Column(
+      //     //            children: <Widget>[
+      //     //              Expanded(
+      //     //                child: Text("formation name"),
+      //     //              )
+      //     //            ],
+      //     //          ),
+      //     //        ),
+      //     //      ),
+      //     //    )
 
-         child: ListView(
-           children: <Widget>[
-               Container(
-                 margin: EdgeInsets.only(left: 12,right: 12),
-                 padding: EdgeInsets.all(10),
-                 child: Card(
-                  child: Row(children: <Widget>[
-                    Container(child: Image.asset("assets/Formation.png",width: 100,height: 100,),),
-                    Column(children: <Widget>[
-                      Container(
-                        child: Text("Formaion Name",),
-                      
-                      ),
-                      Container(
-                        child: Text("Cirtificate Link"),
-                      )
-                     
-                    ],)
-                  ],),
-               ),)
-           ],
-         )
-         
-         ,),
+      //     //  )
+      //     Text("fuck hhh ")
+      //    ],
+      //  ),
        ),
-     floatingActionButton: FloatingActionButton(
-       child: Icon(Icons.add),
-       onPressed:() => _onAlertWithCustomContentPressed(context) ,
-       ),
+    //  floatingActionButton: FloatingActionButton(
+    //    child: Icon(Icons.save),
+    //    onPressed:() => _onAlertWithCustomContentPressed(context) ,
+    //    ),
     );
 
 
