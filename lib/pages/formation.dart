@@ -17,174 +17,7 @@ class formation extends StatefulWidget with NavigationStates{
 class myformation extends State<formation>{
 String _date="Fomation Start Date";
    String _date2= "Formation End Date";
-_onAlertWithCustomContentPressed(context) {
-    Alert(
-        context: context,
-        title: "Add Formation",
-        content: Column(
-          children: <Widget>[
-            Container(
-                margin: EdgeInsets.only(left: 12.0,right: 12.0),
-                  child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'Formation Name',
-                          prefixIcon: Icon(Icons.school)
-                        ),
-                      ),
-              ),
-               SizedBox(
-                height: 20.0,
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 12.0,right: 12.0),
-                  child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'Certificate Link',
-                          prefixIcon: Icon(Icons.language)
-                        ),
-                      ),
-              ),
-               SizedBox(
-                height: 20.0,
-              ),
-               Container(
-                margin: EdgeInsets.only(left: 12.0,right: 12.0),
-                  child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'Formation Place',
-                          prefixIcon: Icon(Icons.location_on)
-                        ),
-                      ),
-              ),
-                
-                SizedBox(
-                height: 20.0,
-              ),
-                 Container(
-                   margin: EdgeInsets.only(left: 12.0,right: 12.0),
-                  child:  RaisedButton(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0)),
-                elevation: 1.0,
-                onPressed: () {
-                  DatePicker.showDatePicker(context,
-                      theme: DatePickerTheme(
-                        containerHeight: 210.0,
-                      ),
-                      showTitleActions: true,
-                      minTime: DateTime(1900, 1, 1),
-                      maxTime: DateTime(2150, 12, 31), onConfirm: (date1) {
-                    print('confirm $date1');
-                    _date = '${date1.year} - ${date1.month} - ${date1.day}';
-                    setState(() {});
-                  }, currentTime: DateTime.now(), locale: LocaleType.en);
-                },
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 50.0,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Container(
-                            child: Row(
-                              children: <Widget>[
-                                Icon(
-                                  Icons.date_range,
-                                  size: 18.0,
-                                  color: Colors.grey,
-                                ),
-                                Text(
-                                  " $_date",
-                                  style: TextStyle(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12.0),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                      
-                    ],
-                  ),
-                ),
-                color: Colors.white,
-              )
-                  ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
- Container(
-   margin: EdgeInsets.only(left: 12.0,right: 12.0),
-                  child:  RaisedButton(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0)),
-                elevation: 1.0,
-                onPressed: () {
-                  DatePicker.showDatePicker(context,
-                      theme: DatePickerTheme(
-                        containerHeight: 210.0,
-                      ),
-                      showTitleActions: true,
-                      minTime: DateTime(1900, 1, 1),
-                      maxTime: DateTime(2150, 12, 31), onConfirm: (date) {
-                    print('confirm $date');
-                    _date2 = '${date.year} - ${date.month} - ${date.day}';
-                    setState(() {});
-                  }, currentTime: DateTime.now(), locale: LocaleType.en);
-                },
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 50.0,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Container(
-                            child: Row(
-                              children: <Widget>[
-                                Icon(
-                                  Icons.date_range,
-                                  size: 18.0,
-                                  color: Colors.grey,
-                                ),
-                                Text(
-                                  " $_date2",
-                                  style: TextStyle(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12.0),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                     
-                    ],
-                  ),
-                ),
-                color: Colors.white,
-              )
-                  ),
 
-
-          ],
-        ),
-        buttons: [
-          DialogButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text(
-              "Save",
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
-          )
-        ]).show();
-  }
   
 
 
@@ -216,11 +49,17 @@ _onAlertWithCustomContentPressed(context) {
                        crossAxisAlignment: CrossAxisAlignment.start,
                        children: <Widget>[
                          Text("- Foramtion Name",textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.w600),),
-                         InkWell(
-                           child: Text("www.certificatelink.com",style: TextStyle(color: Colors.blue)),
+                         Row(
+                           children: <Widget>[
+                              Text("-"),
+                              InkWell(
+                           child: Text("www.certificatelink.com",style: TextStyle(color: Colors.blue,fontSize: 14.5,)),
                            onTap: ()=>{},
                          ),
-                         Text("Duration:2017/9/10,2018/6/31"),
+                           ],
+                         ),
+                         
+                         Text("-Duration: 2 years",style: TextStyle(fontSize: 14.5,),),
                        ],
                      ),
                    ),
@@ -256,11 +95,17 @@ _onAlertWithCustomContentPressed(context) {
                        crossAxisAlignment: CrossAxisAlignment.start,
                        children: <Widget>[
                          Text("- Foramtion Name",textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.w600),),
-                         InkWell(
-                           child: Text("www.certificatelink.com",style: TextStyle(color: Colors.blue)),
+                         Row(
+                           children: <Widget>[
+                              Text("-"),
+                              InkWell(
+                           child: Text("www.certificatelink.com",style: TextStyle(color: Colors.blue,fontSize: 14.5,)),
                            onTap: ()=>{},
                          ),
-                         Text("Duration:2017/9/10,2018/6/31"),
+                           ],
+                         ),
+                         
+                         Text("-Duration: 2 years",style: TextStyle(fontSize: 14.5,),),
                        ],
                      ),
                    ),
@@ -282,7 +127,7 @@ _onAlertWithCustomContentPressed(context) {
   ],
             )
           ),
-          Container(
+           Container(
             child:Slidable(
               delegate: new SlidableDrawerDelegate(),
               child: Container(
@@ -296,11 +141,17 @@ _onAlertWithCustomContentPressed(context) {
                        crossAxisAlignment: CrossAxisAlignment.start,
                        children: <Widget>[
                          Text("- Foramtion Name",textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.w600),),
-                         InkWell(
-                           child: Text("www.certificatelink.com",style: TextStyle(color: Colors.blue)),
+                         Row(
+                           children: <Widget>[
+                              Text("-"),
+                              InkWell(
+                           child: Text("www.certificatelink.com",style: TextStyle(color: Colors.blue,fontSize: 14.5,)),
                            onTap: ()=>{},
                          ),
-                         Text("Duration:2017/9/10,2018/6/31"),
+                           ],
+                         ),
+                         
+                         Text("-Duration: 2 years",style: TextStyle(fontSize: 14.5,),),
                        ],
                      ),
                    ),
@@ -321,7 +172,8 @@ _onAlertWithCustomContentPressed(context) {
     ),
   ],
             )
-          )
+          ), 
+         
          ],
        ),
       //  child: Column(
