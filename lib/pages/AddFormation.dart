@@ -18,7 +18,7 @@ class addformation extends StatefulWidget with NavigationStates{
 
 }
 class ajouterFormation extends State<addformation>{
-   String _date="Formation start date";
+   String _date="Set Data";
    String _date2= "Set Date";
  File _image;
   Future getImageFromCamera()async{
@@ -53,7 +53,7 @@ class ajouterFormation extends State<addformation>{
     ],
       ),
       body: Container(
-        
+        child:Form(
         child: Container(
           margin: EdgeInsets.fromLTRB(12, 0, 12, 0),
           
@@ -97,7 +97,7 @@ class ajouterFormation extends State<addformation>{
                       mainAxisAlignment: MainAxisAlignment.start,
                      children: <Widget>[
                         Expanded(
-                          child: TextField(
+                          child: TextFormField(
                            
                             textAlign:  TextAlign.left,
                             
@@ -124,7 +124,7 @@ class ajouterFormation extends State<addformation>{
                    child: new Padding(
                      padding: const EdgeInsets.only(left: 40),
                      child: Text(
-                       "Certificate Link",
+                       "Department Name",
                        style: TextStyle(
                           fontWeight: FontWeight.bold,
                       color: Color(0xff64b5f6),
@@ -152,13 +152,13 @@ class ajouterFormation extends State<addformation>{
                       mainAxisAlignment: MainAxisAlignment.start,
                      children: <Widget>[
                         Expanded(
-                          child: TextField(
+                          child: TextFormField(
                            
                             textAlign:  TextAlign.left,
                             
                             decoration: InputDecoration(border: InputBorder.none,
-                            hintText: 'Link...',
-                            prefixIcon: Icon(Icons.public),
+                            hintText: 'Name...',
+                            prefixIcon: Icon(Icons.account_balance),
                             hintStyle: TextStyle(color: Colors.grey),
                             ),
                           ),
@@ -340,7 +340,7 @@ class ajouterFormation extends State<addformation>{
                  Container(alignment: Alignment.bottomLeft,
                   padding: const EdgeInsets.only(left: 40),
                   child:  Text(
-                       "Foramtion Image",
+                       "Department Logo",
                        style: TextStyle(
                           fontWeight: FontWeight.bold,
                       color: Color(0xff64b5f6),
@@ -372,12 +372,61 @@ class ajouterFormation extends State<addformation>{
                   Padding(
                    padding: EdgeInsets.only(top:70),
                  ),
-             
-
+                 SizedBox(
+                   height: 30.0,
+                 ),
+                Container(alignment: Alignment.bottomLeft,
+                  padding: const EdgeInsets.only(left: 40),
+                  child:  Text(
+                       "Or :",
+                       style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                      color: Color(0xff64b5f6),
+                      fontSize: 15.0,
+                       ),
+                     ),
+                  ),
+                   Container(
+                   width: MediaQuery.of(context).size.width,
+                   margin: const EdgeInsets.only(left: 40.0,right: 40.0,top:2.0),
+                   alignment: Alignment.center,
+                   decoration: BoxDecoration(
+                     border: Border(
+                       bottom: BorderSide(
+                         color: Color(0xff64b5f6),
+                         width: 0.5,
+                         style: BorderStyle.solid
+                       )
+                     )
+                   ),
+                   padding: EdgeInsets.only(left: 0.0,right: 10.0),
+                   child: new Row(
+                     crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                     children: <Widget>[
+                        Expanded(
+                          child: TextFormField(
+                           
+                            textAlign:  TextAlign.left,
+                            
+                            decoration: InputDecoration(border: InputBorder.none,
+                            hintText: 'Department Link',
+                            prefixIcon: Icon(Icons.account_balance),
+                            hintStyle: TextStyle(color: Colors.grey),
+                            ),
+                          ),
+                        )
+                     ],
+                   ),
+                 ),
+                 SizedBox(
+                   height: 70,
+                 )
                  
 
           ],),
         ),
+      )
       ),
 
 
