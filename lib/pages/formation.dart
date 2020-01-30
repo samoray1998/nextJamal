@@ -5,6 +5,7 @@ import 'package:second_app/navigation_items/navigation.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:second_app/pages/AddFormation.dart';
 
 class formation extends StatefulWidget with NavigationStates{
   @override
@@ -36,10 +37,16 @@ String _date="Fomation Start Date";
        child:ListView(
          children: <Widget>[
           Container(
+            padding: EdgeInsets.only(bottom: 10),
             child:Slidable(
               delegate: new SlidableDrawerDelegate(),
-              child: Container(
-                color: Colors.white,
+              child: InkWell(
+                onTap: (){
+            Navigator.push(
+             context,
+              MaterialPageRoute(builder: (context) =>addformation()),
+            );
+          } ,
                 child: ListTile(
                    leading: Image.asset("assets/Formation.png",width: 50,height: 50,),
                    title: Container(
@@ -47,6 +54,7 @@ String _date="Fomation Start Date";
                      child: Column(
                        mainAxisAlignment: MainAxisAlignment.start,
                        crossAxisAlignment: CrossAxisAlignment.start,
+                       mainAxisSize: MainAxisSize.min,
                        children: <Widget>[
                          Text("- Foramtion Name",textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.w600),),
                          Row(
@@ -59,7 +67,7 @@ String _date="Fomation Start Date";
                            ],
                          ),
                          
-                         Text("-Duration: 2 years",style: TextStyle(fontSize: 14.5,),),
+                        
                        ],
                      ),
                    ),
@@ -82,10 +90,16 @@ String _date="Fomation Start Date";
             )
           ),
           Container(
+            padding: EdgeInsets.only(bottom: 10),
             child:Slidable(
               delegate: new SlidableDrawerDelegate(),
-              child: Container(
-                color: Colors.white,
+              child: InkWell(
+                onTap: (){
+            Navigator.push(
+             context,
+              MaterialPageRoute(builder: (context) =>addformation()),
+            );
+          } ,
                 child: ListTile(
                    leading: Image.asset("assets/Formation.png",width: 50,height: 50,),
                    title: Container(
@@ -93,8 +107,10 @@ String _date="Fomation Start Date";
                      child: Column(
                        mainAxisAlignment: MainAxisAlignment.start,
                        crossAxisAlignment: CrossAxisAlignment.start,
+                       mainAxisSize: MainAxisSize.min,
                        children: <Widget>[
                          Text("- Foramtion Name",textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.w600),),
+                         
                          Row(
                            children: <Widget>[
                               Text("-"),
@@ -105,7 +121,7 @@ String _date="Fomation Start Date";
                            ],
                          ),
                          
-                         Text("-Duration: 2 years",style: TextStyle(fontSize: 14.5,),),
+                         
                        ],
                      ),
                    ),
@@ -116,7 +132,12 @@ String _date="Fomation Start Date";
       caption: 'Edit',
       color: Colors.black45,
       icon: Icons.edit,
-      onTap: () =>print("more"),
+      onTap:(){
+            Navigator.push(
+             context,
+              MaterialPageRoute(builder: (context) =>addformation()),
+            );
+          } ,
     ),
     new IconSlideAction(
       caption: 'Delete',
@@ -128,10 +149,16 @@ String _date="Fomation Start Date";
             )
           ),
            Container(
+             padding: EdgeInsets.only(bottom: 10),
             child:Slidable(
               delegate: new SlidableDrawerDelegate(),
-              child: Container(
-                color: Colors.white,
+              child: InkWell(
+                onTap: (){
+            Navigator.push(
+             context,
+              MaterialPageRoute(builder: (context) =>addformation()),
+            );
+          } ,
                 child: ListTile(
                    leading: Image.asset("assets/Formation.png",width: 50,height: 50,),
                    title: Container(
@@ -139,6 +166,7 @@ String _date="Fomation Start Date";
                      child: Column(
                        mainAxisAlignment: MainAxisAlignment.start,
                        crossAxisAlignment: CrossAxisAlignment.start,
+                       mainAxisSize: MainAxisSize.min,
                        children: <Widget>[
                          Text("- Foramtion Name",textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.w600),),
                          Row(
@@ -148,10 +176,11 @@ String _date="Fomation Start Date";
                            child: Text("www.certificatelink.com",style: TextStyle(color: Colors.blue,fontSize: 14.5,)),
                            onTap: ()=>{},
                          ),
+                         
                            ],
                          ),
                          
-                         Text("-Duration: 2 years",style: TextStyle(fontSize: 14.5,),),
+                         
                        ],
                      ),
                    ),
@@ -162,7 +191,12 @@ String _date="Fomation Start Date";
       caption: 'Edit',
       color: Colors.black45,
       icon: Icons.edit,
-      onTap: () =>print("more"),
+      onTap: (){
+            Navigator.push(
+             context,
+              MaterialPageRoute(builder: (context) =>addformation()),
+            );
+          } ,
     ),
     new IconSlideAction(
       caption: 'Delete',
@@ -172,7 +206,8 @@ String _date="Fomation Start Date";
     ),
   ],
             )
-          ), 
+          ),
+          
          
          ],
        ),

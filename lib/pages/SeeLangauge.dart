@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:second_app/navigation_items/navigation.dart';
-import 'package:smooth_star_rating/smooth_star_rating.dart'; 
-class skill extends StatefulWidget with NavigationStates {
+import 'package:smooth_star_rating/smooth_star_rating.dart';
+class SeeLanguagePage extends StatefulWidget with NavigationStates{
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return addSkills();
+  State<StatefulWidget> createState() =>SeeLangauge ();
+  
   }
-}
-
-class addSkills extends State<skill> {
- double rating=0;
+  
+  class SeeLangauge extends State<SeeLanguagePage> {
+    double rating=0;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Add Skills"),
-          centerTitle: true,
-          automaticallyImplyLeading: false,
-        ),
-        body: Container(
-          child: ListView(
+      appBar: AppBar(
+        title: Text("Your Langauges"),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+
+      ),
+      body:Container(
+         child: ListView(
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(top: 30),
@@ -34,11 +33,9 @@ class addSkills extends State<skill> {
                     Container(
                       alignment: Alignment.bottomLeft,
                       padding: EdgeInsets.only(left: 20),
-                      child:Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: <Widget>[
+                      child:Row(children: <Widget>[
                         Text(
-                        "Photography :",
+                        "English :",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
@@ -46,10 +43,7 @@ class addSkills extends State<skill> {
                         ),
                       ),
                       Spacer(),
-                      Container(
-                       
-                        
-                          child:  PopupMenuButton(
+                      PopupMenuButton(
         icon: Icon(Icons.more_vert),
         itemBuilder: (BuildContext context){
           return  mypopupitems.map((mypopupitem mpp){
@@ -62,12 +56,12 @@ class addSkills extends State<skill> {
           }).toList(); 
         },
 
-      ),
-                      ),
-                     
+      )
                       ],) 
                       
                     ),
+                   
+                    
                     Row(
                       children: <Widget>[
                           Container(
@@ -97,15 +91,14 @@ class addSkills extends State<skill> {
    ) 
                       ],
                     ),
-                    
-                   
                   ],
                 ),
               ),
               )
             ],
           ),
-        ));
+      ) ,
+    );
   }
 }
 class mypopupitem{

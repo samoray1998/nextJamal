@@ -122,7 +122,7 @@ class sidebar extends StatefulWidget{
                     MenuItem(icon: Icons.person,title: "Profile",
                     onTap: (){
                      onIconPressed();
-                      BlocProvider.of<Navigationitems>(context).add(NavigationEvents.AccountPageClickEvent); 
+                      BlocProvider.of<Navigationitems>(context).add(NavigationEvents.SeeExperinceListClickEvent); 
                     },
                     ),
                     MenuItem(icon: Icons.collections_bookmark,title: "CV Templets",
@@ -153,8 +153,31 @@ class sidebar extends StatefulWidget{
                     },
                     
                     ),
-                    MenuItem(icon: Icons.insert_drive_file,title: "Legale & Policies",),
-                    MenuItem(icon: Icons.exit_to_app,title: "Logout",)
+                     MenuItem(icon: Icons.language,title: "Add Langauge",
+                     onTap: (){
+                     onIconPressed();
+                      BlocProvider.of<Navigationitems>(context).add(NavigationEvents.AddLangaugeClickEvent); 
+                    },
+                    
+                    ),
+                    MenuItem(icon: Icons.insert_drive_file,title: "Legale & Policies",
+                    onTap: (){
+                     onIconPressed();
+                      BlocProvider.of<Navigationitems>(context).add(NavigationEvents.SecondAddSkillClickEvent); 
+                    },
+                    ),
+                     MenuItem(icon: Icons.exit_to_app,title: "See Langauge",
+                    onTap: (){
+                     onIconPressed();
+                      BlocProvider.of<Navigationitems>(context).add(NavigationEvents.SeeLangaugeClickEvent); 
+                    },
+                    ),
+                    MenuItem(icon: Icons.exit_to_app,title: "Logout",
+                    onTap: (){
+                     onIconPressed();
+                      BlocProvider.of<Navigationitems>(context).add(NavigationEvents.AddExperinceClickEvent); 
+                    },
+                    )
 
               ],
             ),

@@ -360,7 +360,7 @@ class ajouterFormation extends State<addformation>{
                         ),
                         Container(
                           width: MediaQuery.of(context).size.width,
-                          height:MediaQuery.of(context).size.width ,
+                          height:200,
                           color: Colors.white,
                           child: _image==null?Center(
                             child: Text("Select an image"),
@@ -370,11 +370,9 @@ class ajouterFormation extends State<addformation>{
                     ) ,
                   ),
                   Padding(
-                   padding: EdgeInsets.only(top:70),
+                   padding: EdgeInsets.only(top:30),
                  ),
-                 SizedBox(
-                   height: 30.0,
-                 ),
+               
                 Container(alignment: Alignment.bottomLeft,
                   padding: const EdgeInsets.only(left: 40),
                   child:  Text(
@@ -411,7 +409,7 @@ class ajouterFormation extends State<addformation>{
                             
                             decoration: InputDecoration(border: InputBorder.none,
                             hintText: 'Department Link',
-                            prefixIcon: Icon(Icons.account_balance),
+                            prefixIcon: Icon(Icons.public),
                             hintStyle: TextStyle(color: Colors.grey),
                             ),
                           ),
